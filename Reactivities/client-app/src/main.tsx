@@ -4,9 +4,12 @@ import App from './app/layout/App.tsx'
 import './app/layout/styles.css'
 import './app/layout/index.css'
 import 'semantic-ui-css/semantic.min.css'
+import { StoreContext, store } from './app/stores/store.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+   <React.StrictMode>
+    <StoreContext.Provider value={store}>
     <App />
-  </React.StrictMode>,
+    </StoreContext.Provider>
+   </React.StrictMode>,
 )
